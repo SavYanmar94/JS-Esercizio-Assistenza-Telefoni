@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistenza Telefonica</title>
+    <style>
+
+        body {
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: cadetblue;
+
+        }
+        .container{
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: left;
+            background-color: beige;
+            width: 50%;
+        }
+
+        .casella {
+    width: 70%;
+}
+
+        input{
+            margin-top: 20px;
+        }
+
+        textarea{
+            margin-top: 20px;
+            width: 70%;
+        }
+
+        #tabella{
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: lightgrey;
+            
+            width: 50%;
+            border-collapse: collapse;
+            display: none;
+        }
+        table{
+           
+            border-collapse: collapse;
+            
+        }
+
+        tr, td{
+            margin:0px;
+            border: 1px solid black;
+            /* background-color: white; */
+            width: 100%;
+            margin:0px;
+            padding-left: 5px;
+
+        }
+
+        #grazie { 
+
+            display: none;
+            text-align: center;
+        }
+
+        h4{
+            text-align: center;
+            margin: 10px;
+        }
+
+       #nome, #cognome, #citta, #operatore , #teldive, #tel, #codicefis, #marca, #modello,#desc,#problema{
+        background-color: rgb(8, 173, 188);
+        
+       }
+
+       #tornaindietro { 
+
+        display: none;
+        background-color: aquamarine;
+        width: 30%;
+        height: 10%;
+        margin-left: auto;
+        margin-right: auto;
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h1 id="title"> Modulo di richiesta assistenza</h1>
+        <h1 id="grazie"> GRAZIE</h1>
+        <button id="tornaindietro" > Torna Indietro</button>
+        <h3 id="subtitle"> Compila il seguente modulo per richiedere la nostra assistenza</h3>
+        <form id="form" name="form" method="post" action="#"> 
+        
+
+            Nome: <input type="text" name="nome" class="casella" tabindex="1" /> <br />
+            Cognome: <input type="text" name="cognome" class="casella" tabindex="2" /> <br />
+            Codice Fiscale: <input type="text" name="codicefis" class="casella" tabindex="3" maxlength="16"/> <br />
+            Città: <input type="text" name="citta" class="casella" tabindex="4" /> <br /><br />
+            Gestore Telefonico : <br /> <input type="radio" name="operatore" value="tim"/> TIM <br />
+            <input type="radio" name="operatore" value="vodafone"  /> VODAFONE <br />
+            <input type="radio" name="operatore" value="windtre"  /> WIND-TRE <br />
+            <input type="radio" name="operatore" value="altro" /> Altro <input type="text" name="altroOperatore" /> <br /> <br />
+            Numero di telefono dispositivo: <input type="tel" name="tel"  class="casella" tabindex="5" maxlength="10"> <br /><br />
+            Marca dispositivo:<br /> <input type="radio" name="marca" value="samsung" id="samsung" /> Samsung <br />
+            <input type="radio" name="marca" value="apple" id="apple" /> Apple <br />
+            <input type="radio" name="marca" value="xiaomi" id="xiaomi" /> Xiaomi <br />
+            <input type="radio" name="marca" value="nokia" id="nokia" /> Nokia <br />
+            <input type="radio" name="marca" value="altro" id="altroma" /> Altro <input type="text" name="altramarca" /> <br /> <br />
+            Modello dispositivo: <input type="text" name="modello" class="casella" tabindex="7" id="mod" /> <br /> <br>
+            Breve descrizione del problema : <textarea name="messaggio" cols="60" row="9" id="des" class="casella" ></textarea> <br><br>
+            Numero di telefono(se diverso): <input type="tel" name="teldiv"  id="teldiv" class="casella" tabindex="8" maxlength="10"> <br />
+            <input type="button" id="submit" value="Invia"/>
+     
+    
+            </form> 
+                <div id="risultato"> </div>
+
+    </div>
+
+    <div id="tabella">
+        <table> 
+
+        <h4>Cellulandia - Via Dei Cipressi 24 , Roma</h4>
+        <h4>Ricevuta di Consegna</h4>
+           <tr> 
+              <td>Nome</td>
+              <td id="nome"> </td>
+           </tr>
+           <tr> 
+            <td>Cognome</td>
+            <td id="cognome"> </td>
+           </tr>
+           <tr> 
+            <td>Codice Fiscale </td>
+            <td id="codicefis"> </td>
+           </tr>
+           
+           <tr> 
+            <td>Città </td>
+            <td id="citta"> </td>
+           </tr>
+
+           <tr> 
+            <td>Gestore Telefonico</td>
+            <td id="operatore"> </td>
+           </tr>
+
+           <tr> 
+            <td>Numero di telefono</td>
+            <td id="tel"> </td>
+           </tr>
+           
+           <tr> 
+            <td>Marca dispositivo</td>
+            <td id="marca"> </td>
+           </tr>
+            
+           <tr> 
+            <td>Modello</td>
+            <td id="modello"> </td>
+           </tr>
+            
+           <tr > 
+            <td>Breve Descrizione del Problema </td>
+            <td id="problema"></td>
+           </tr>
+
+           
+
+           <tr> 
+            <td>Numero di Tel.(se diverso)</td>
+            <td id="teldive"> </td>
+           </tr>
+
+
+            
+
+        </table>
+
+    </div>
+
+      
+
+    <script>
+        document.getElementById("submit").addEventListener("click", invio);
+    
+        function invio() {
+
+            document.getElementById("nome").innerHTML = document.form.nome.value; 
+            document.getElementById("cognome").innerHTML = document.form.cognome.value; 
+            document.getElementById("codicefis").innerHTML = document.form.codicefis.value; 
+            document.getElementById("citta").innerHTML = document.form.citta.value;
+
+                if ( document.form.operatore.value !== "altro" ){  
+                document.getElementById("operatore").innerHTML = document.form.operatore.value; 
+
+                } else {  
+                document.getElementById("operatore").innerHTML = document.form.altroOperatore.value; 
+                }
+            
+                document.getElementById("tel").innerHTML = document.form.tel.value;
+
+                if ( document.form.marca.value !== "altro" ){  
+                document.getElementById("marca").innerHTML = document.form.marca.value; 
+
+                } else {  
+                document.getElementById("marca").innerHTML = document.form.altramarca.value; 
+                }
+
+                document.getElementById("modello").innerHTML = document.form.modello.value;
+
+                document.getElementById("problema").innerHTML = document.form.messaggio.value;
+
+                document.getElementById("teldive").innerHTML = document.form.teldiv.value;
+                if(document.form.teldiv.value !== ""){
+                document.getElementById("teldive").innerHTML =document.form.teldiv.value;
+                } else{
+                    document.getElementById("teldive").innerHTML = document.form.tel.value;
+                }
+
+                //nascondere form
+                document.getElementById("form").style.display="none";
+                document.getElementById("tabella").style.display="block";
+                document.getElementById("title").style.display="none";
+                document.getElementById("subtitle").style.display="none";
+                document.getElementById("grazie").style.display="block";
+                document.getElementById("tornaindietro").style.display="block";
+        }
+
+        document.getElementById("tornaindietro").addEventListener("click", tornaindietro); 
+
+        function tornaindietro () { 
+             
+            document.getElementById("form").style.display="block";
+            document.getElementById("tabella").style.display="none";
+            document.getElementById("title").style.display="block";
+            document.getElementById("subtitle").style.display="block";
+            document.getElementById("grazie").style.display="none";
+            document.getElementById("tornaindietro").style.display="none";
+            
+        }
+    </script>
+
+
+
+</body>
+</html>
+
